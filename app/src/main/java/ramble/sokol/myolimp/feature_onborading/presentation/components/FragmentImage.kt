@@ -76,7 +76,7 @@ fun FragmentImage(
 
         Image(
             modifier = Modifier
-                .fillMaxHeight(0.3f)
+                .fillMaxHeight(0.4f)
                 .fillMaxWidth(),
             painter = painterResource(id = item.img),
             contentDescription = item.textTitle
