@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp
+package ramble.sokol.myolimp.feature_onborading.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

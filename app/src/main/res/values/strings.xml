@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MyOlimp</string>
+    <string name="next">Продолжить</string>
+    <string name="skip">Пропустить</string>
+    <string name="text_title_1_onboarding">Регистрируйтесь на олимпиады одним кликом</string>
+    <string name="text_content_1_onboarding">Теперь не нужно вводить одни и те же данные на разных сайтах</string>
+    <string name="text_title_2_onboarding">Готовьтесь к олимпиадам с помощью Библиотеки</string>
+    <string name="text_content_2_onboarding">Все необходимое для подготовки на максимальное количество баллов</string>
+    <string name="text_title_3_onboarding">Сохраняйте все нужные даты и ссылки в Календаре</string>
+    <string name="text_content_3_onboarding">Уведомления точно не дадут вам забыть про вебинары и олимпиады</string>
+    <string name="text_title_4_onboarding">Следите за всеми новостями мира олимпиад</string>
+    <string name="text_content_4_onboarding">В новостной ленте вы найдете только самое актуальное и интересное</string>
 </resources>
