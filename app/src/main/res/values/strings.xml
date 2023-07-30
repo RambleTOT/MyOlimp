@@ -10,4 +10,8 @@
     <string name="text_content_3_onboarding">Уведомления точно не дадут вам забыть про вебинары и олимпиады</string>
     <string name="text_title_4_onboarding">Следите за всеми новостями мира олимпиад</string>
     <string name="text_content_4_onboarding">В новостной ленте вы найдете только самое актуальное и интересное</string>
+    <string name="last_step">Последний штрих</string>
+    <string name="choose_option_authentication">Войдите или зарегистрируйтесь, чтобы получить доступ ко всем функциям</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="login">Войти</string>
 </resources>

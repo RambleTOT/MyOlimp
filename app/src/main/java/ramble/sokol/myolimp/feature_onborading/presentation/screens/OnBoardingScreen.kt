@@ -1,40 +1,37 @@
-package ramble.sokol.myolimp.feature_onborading.screens
+package ramble.sokol.myolimp.feature_onborading.presentation.screens
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_onborading.components.FragmentImage
-import ramble.sokol.myolimp.feature_onborading.view_models.OnBoardingViewModel
-import ramble.sokol.myolimp.ui.theme.BlueStart
-import ramble.sokol.myolimp.ui.theme.White
 import kotlinx.coroutines.launch
+import ramble.sokol.myolimp.R
+import ramble.sokol.myolimp.feature_authentication.presentation.activities.MainAuthenticationActivity
+import ramble.sokol.myolimp.feature_onborading.presentation.components.FilledBtn
+import ramble.sokol.myolimp.feature_onborading.presentation.components.FragmentImage
+import ramble.sokol.myolimp.feature_onborading.domain.view_models.OnBoardingViewModel
+import ramble.sokol.myolimp.ui.theme.GreyDark
 
 @SuppressLint("SuspiciousIndentation", "UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalFoundationApi::class)
@@ -46,6 +43,8 @@ fun OnBoardingScreen(
     val items = viewModel.items
     val pagerState = rememberPagerState()
     val coroutineScope = rememberCoroutineScope()
+    val context = LocalContext.current
+    val intent = Intent(context, MainAuthenticationActivity::class.java)
 
     Column(
         modifier = Modifier
@@ -68,49 +67,34 @@ fun OnBoardingScreen(
 
         Spacer(modifier = Modifier.height(22.dp))
 
-        Button(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 36.dp)
-                .background(
-                    color = BlueStart,
-                    shape = RoundedCornerShape(size = 16.dp)
-                ),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = BlueStart
-            ),
-            onClick = {
+        FilledBtn(
+            text = stringResource(R.string.next)
+        ) {
+            if (pagerState.currentPage + 1 < items.size) {
                 coroutineScope.launch {
                     pagerState.animateScrollToPage(
                         pagerState.currentPage + 1,
 
-                    )
+                        )
                 }
+            } else {
+                context.startActivity(intent)
             }
-        ) {
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                text = stringResource(R.string.next),
-                style = TextStyle(
-                    fontSize = 20.sp,
-                    fontFamily = FontFamily(Font(R.font.medium)),
-                    fontWeight = FontWeight(600),
-                    color = White,
-                    textAlign = TextAlign.Center
-                )
-            )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
+            modifier = Modifier
+                .clickable {
+                    context.startActivity(intent)
+                },
             text = stringResource(R.string.skip),
             style = TextStyle(
                 fontSize = 16.sp,
                 fontFamily = FontFamily(Font(R.font.regular)),
                 fontWeight = FontWeight(500),
-                color = Color(0xCC8C888A),
+                color = GreyDark,
                 letterSpacing = 0.3.sp,
             )
         )

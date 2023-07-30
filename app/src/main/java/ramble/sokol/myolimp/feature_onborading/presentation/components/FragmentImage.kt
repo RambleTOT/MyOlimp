@@ -1,5 +1,10 @@
-package ramble.sokol.myolimp.feature_onborading.components
+package ramble.sokol.myolimp.feature_onborading.presentation.components
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,16 +17,16 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -31,9 +36,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_onborading.models.FragmentImg
+import ramble.sokol.myolimp.feature_onborading.domain.models.FragmentImg
 import ramble.sokol.myolimp.ui.theme.BlueStart
 import ramble.sokol.myolimp.ui.theme.GreyInactive
+import ramble.sokol.myolimp.ui.theme.GreySecondary
+import ramble.sokol.myolimp.ui.theme.LightBlack
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -44,6 +51,21 @@ fun FragmentImage(
 ) {
 
     val item = items[position]
+
+    val increaseWidth by animateDpAsState(
+        targetValue = 24.dp,
+        animationSpec = spring()
+    )
+
+    val decreaseWidth by animateDpAsState(
+        targetValue = 12.dp,
+        animationSpec = tween(
+            durationMillis = 5000,
+            delayMillis = 1000,
+            easing = LinearEasing
+        )
+    )
+
 
     Column (
         modifier = Modifier
@@ -70,16 +92,17 @@ fun FragmentImage(
         ) {
             repeat(items.size) {
                 Box(modifier = Modifier
-                    .padding(5.dp)
+                    .padding(4.dp)
                     .clip(CircleShape)
                     .background(
                         if (pagerState.currentPage == it) BlueStart else GreyInactive,
                         shape = RoundedCornerShape(size = 100.dp)
                     )
                     .height(12.dp)
-                    .width(
-                        if (pagerState.currentPage == it) 24.dp else 12.dp
+                    .size(
+                        if (pagerState.currentPage == it) increaseWidth else decreaseWidth
                     )
+                    .animateContentSize()
                 )
             }
         }
@@ -89,28 +112,28 @@ fun FragmentImage(
         Text(
             text = item.textTitle,
             style = TextStyle(
-                fontSize = 25.sp,
-                lineHeight = 24.5.sp,
+                fontSize = 26.sp,
+                lineHeight = 25.sp,
                 fontFamily = FontFamily(Font(R.font.bold)),
                 fontWeight = FontWeight(700),
-                color = Color(0xFF262626),
+                color = LightBlack,
                 textAlign = TextAlign.Center,
                 letterSpacing = 0.5.sp,
             )
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         
         Text(
             text = item.textContent,
             style = TextStyle(
                 fontSize = 14.sp,
-                lineHeight = 13.72.sp,
+                lineHeight = 14.sp,
                 fontFamily = FontFamily(Font(R.font.medium)),
                 fontWeight = FontWeight(500),
-                color = Color(0xFF8C888A),
+                color = GreySecondary,
                 textAlign = TextAlign.Center,
-                letterSpacing = 0.28.sp,
+                letterSpacing = 0.3.sp,
             )
         )
 

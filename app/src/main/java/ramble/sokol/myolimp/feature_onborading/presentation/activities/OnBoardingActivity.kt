@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.feature_onborading.activities
+package ramble.sokol.myolimp.feature_onborading.presentation.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,9 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.ui.graphics.toArgb
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_onborading.models.FragmentImg
-import ramble.sokol.myolimp.feature_onborading.screens.OnBoardingScreen
-import ramble.sokol.myolimp.feature_onborading.view_models.OnBoardingViewModel
+import ramble.sokol.myolimp.feature_onborading.domain.models.FragmentImg
+import ramble.sokol.myolimp.feature_onborading.presentation.screens.OnBoardingScreen
+import ramble.sokol.myolimp.feature_onborading.domain.view_models.OnBoardingViewModel
 import ramble.sokol.myolimp.ui.theme.Transparent
 import ramble.sokol.myolimp.ui.theme.White
 

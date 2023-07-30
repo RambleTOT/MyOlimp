@@ -1,9 +1,9 @@
-package ramble.sokol.myolimp.feature_onborading.view_models
+package ramble.sokol.myolimp.feature_onborading.domain.view_models
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
-import ramble.sokol.myolimp.feature_onborading.models.FragmentImg
+import ramble.sokol.myolimp.feature_onborading.domain.models.FragmentImg
 
 class OnBoardingViewModel : ViewModel() {
 
