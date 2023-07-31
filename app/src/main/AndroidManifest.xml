@@ -22,7 +22,8 @@
         <activity
             android:name=".feature_onborading.presentation.activities.SplashActivity"
             android:exported="true"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
