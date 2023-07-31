@@ -20,11 +20,11 @@
             android:name=".feature_authentication.presentation.activities.MainAuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name=".feature_onboarding.presentation.activities.OnBoardingActivity"
+            android:name=".feature_splash_onBoarding.presentation.activities.OnBoardingActivity"
             android:exported="false"
             android:noHistory="true" />
         <activity
-            android:name=".feature_onboarding.presentation.activities.SplashActivity"
+            android:name=".feature_splash_onBoarding.presentation.activities.SplashActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait">

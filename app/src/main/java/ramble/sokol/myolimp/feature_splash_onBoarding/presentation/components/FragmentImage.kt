@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.feature_onboarding.presentation.components
+package ramble.sokol.myolimp.feature_splash_onBoarding.presentation.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearEasing
@@ -36,7 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_onboarding.domain.models.FragmentImg
+import ramble.sokol.myolimp.feature_splash_onBoarding.domain.models.FragmentImg
 import ramble.sokol.myolimp.ui.theme.BlueStart
 import ramble.sokol.myolimp.ui.theme.GreyInactive
 import ramble.sokol.myolimp.ui.theme.GreySecondary
