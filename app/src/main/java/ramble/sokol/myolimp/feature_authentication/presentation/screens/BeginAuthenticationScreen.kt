@@ -26,7 +26,7 @@ import ramble.sokol.myolimp.R
 import ramble.sokol.myolimp.feature_authentication.presentation.components.OutlinedBtn
 import ramble.sokol.myolimp.feature_authentication.navigation.CurrentScreen
 import ramble.sokol.myolimp.feature_authentication.navigation.Router
-import ramble.sokol.myolimp.feature_onborading.presentation.components.FilledBtn
+import ramble.sokol.myolimp.feature_onboarding.presentation.components.FilledBtn
 import ramble.sokol.myolimp.ui.theme.GreySecondary
 import ramble.sokol.myolimp.ui.theme.LightBlack
 

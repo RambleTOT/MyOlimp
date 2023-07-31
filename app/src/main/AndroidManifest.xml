@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".app.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,17 +14,17 @@
         android:theme="@style/Theme.MyOlimp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.presentation.MainActivity"
             android:exported="false" />
         <activity
             android:name=".feature_authentication.presentation.activities.MainAuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name=".feature_onborading.presentation.activities.OnBoardingActivity"
+            android:name=".feature_onboarding.presentation.activities.OnBoardingActivity"
             android:exported="false"
             android:noHistory="true" />
         <activity
-            android:name=".feature_onborading.presentation.activities.SplashActivity"
+            android:name=".feature_onboarding.presentation.activities.SplashActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait">

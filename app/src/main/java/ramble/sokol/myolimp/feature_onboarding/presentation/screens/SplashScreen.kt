@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.feature_onborading.presentation.screens
+package ramble.sokol.myolimp.feature_onboarding.presentation.screens
 
 import android.content.Intent
 import androidx.compose.animation.core.RepeatMode
@@ -22,7 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_onborading.presentation.activities.OnBoardingActivity
+import ramble.sokol.myolimp.feature_onboarding.presentation.activities.OnBoardingActivity
 
 @Composable
 fun SplashScreen() {

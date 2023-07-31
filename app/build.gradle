@@ -68,7 +68,10 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
-
     // for pager
-    implementation 'androidx.compose.foundation:foundation:1.4.3'
+    implementation "androidx.compose.foundation:foundation:$pager_version"
+
+    // DI koin
+    implementation "io.insert-koin:koin-androidx-compose:$koin_compose_version"
+
 }

@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.feature_onborading.presentation.components
+package ramble.sokol.myolimp.feature_onboarding.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth

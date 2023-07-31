@@ -1,7 +1,8 @@
-package ramble.sokol.myolimp
+package ramble.sokol.myolimp.ui.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ramble.sokol.myolimp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

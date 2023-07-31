@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.feature_onborading.presentation.screens
+package ramble.sokol.myolimp.feature_onboarding.presentation.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -28,9 +28,9 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 import ramble.sokol.myolimp.R
 import ramble.sokol.myolimp.feature_authentication.presentation.activities.MainAuthenticationActivity
-import ramble.sokol.myolimp.feature_onborading.presentation.components.FilledBtn
-import ramble.sokol.myolimp.feature_onborading.presentation.components.FragmentImage
-import ramble.sokol.myolimp.feature_onborading.domain.view_models.OnBoardingViewModel
+import ramble.sokol.myolimp.feature_onboarding.presentation.components.FilledBtn
+import ramble.sokol.myolimp.feature_onboarding.presentation.components.FragmentImage
+import ramble.sokol.myolimp.feature_onboarding.domain.view_models.OnBoardingViewModel
 import ramble.sokol.myolimp.ui.theme.GreyDark
 
 @SuppressLint("SuspiciousIndentation", "UnusedMaterial3ScaffoldPaddingParameter")
