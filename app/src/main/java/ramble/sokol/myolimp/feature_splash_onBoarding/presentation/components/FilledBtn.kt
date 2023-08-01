@@ -25,8 +25,6 @@ fun FilledBtn (
     text: String,
     onClick: () -> Unit
 ) {
-
-
     Button(
         modifier = Modifier
             .fillMaxWidth()

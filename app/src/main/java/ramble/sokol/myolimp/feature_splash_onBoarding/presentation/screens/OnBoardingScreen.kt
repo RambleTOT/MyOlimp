@@ -1,7 +1,6 @@
 package ramble.sokol.myolimp.feature_splash_onBoarding.presentation.screens
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -25,9 +24,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.launch
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_authentication.presentation.activities.MainAuthenticationActivity
+import ramble.sokol.myolimp.destinations.BeginAuthenticationScreenDestination
 import ramble.sokol.myolimp.feature_splash_onBoarding.domain.models.FragmentImg
 import ramble.sokol.myolimp.feature_splash_onBoarding.presentation.components.FilledBtn
 import ramble.sokol.myolimp.feature_splash_onBoarding.presentation.components.FragmentImage
@@ -36,10 +37,12 @@ import ramble.sokol.myolimp.ui.theme.OlimpTheme
 
 @SuppressLint("SuspiciousIndentation", "UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalFoundationApi::class)
+@Destination
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    navigator: DestinationsNavigator
+) {
     OlimpTheme {
-
         val items = getFragments()
         val pagerState = rememberPagerState(
             initialPage = 0,
@@ -48,8 +51,6 @@ fun OnBoardingScreen() {
             items.size
         }
         val coroutineScope = rememberCoroutineScope()
-        val context = LocalContext.current
-        val intent = Intent(context, MainAuthenticationActivity::class.java)
 
         Column(
             modifier = Modifier
@@ -83,7 +84,9 @@ fun OnBoardingScreen() {
                             )
                     }
                 } else {
-                    context.startActivity(intent)
+                    navigator.popBackStack()
+
+                    navigator.navigate(BeginAuthenticationScreenDestination)
                 }
             }
 
@@ -92,7 +95,9 @@ fun OnBoardingScreen() {
             Text(
                 modifier = Modifier
                     .clickable {
-                        context.startActivity(intent)
+                        navigator.popBackStack()
+
+                        navigator.navigate(BeginAuthenticationScreenDestination)
                     },
                 text = stringResource(R.string.skip),
                 style = TextStyle(
@@ -149,4 +154,3 @@ private fun getFragments() : List<FragmentImg> {
 
     return items
 }
-

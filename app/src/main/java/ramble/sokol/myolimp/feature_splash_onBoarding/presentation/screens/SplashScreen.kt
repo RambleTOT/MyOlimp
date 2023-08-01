@@ -1,6 +1,5 @@
 package ramble.sokol.myolimp.feature_splash_onBoarding.presentation.screens
 
-import android.content.Intent
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -17,21 +16,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.delay
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_splash_onBoarding.presentation.activities.OnBoardingActivity
+import ramble.sokol.myolimp.destinations.OnBoardingScreenDestination
 import ramble.sokol.myolimp.ui.theme.OlimpTheme
 
+@RootNavGraph(start = true)
+@Destination
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    navigator: DestinationsNavigator
+) {
     OlimpTheme (
         isSplashScreen = true
     ) {
-        val context = LocalContext.current
-        val intent = Intent(context, OnBoardingActivity::class.java)
+
         val transition = rememberInfiniteTransition()
         val alpha by transition.animateFloat(
             initialValue = 0f,
@@ -48,11 +52,14 @@ fun SplashScreen() {
         LaunchedEffect(
             key1 = true
         ) {
-            delay(1500L)
-            /*
-            After delay launch MainActivity
+            delay(2000L)
+        /*
+            After delay launch onBoarding
         */
-            context.startActivity(intent)
+
+        // after that user won't be able to go to previous page
+            navigator.popBackStack()
+            navigator.navigate(OnBoardingScreenDestination)
         }
 
         Column(

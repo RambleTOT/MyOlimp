@@ -22,81 +22,84 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import ramble.sokol.myolimp.R
+import ramble.sokol.myolimp.destinations.LoginScreenDestination
+import ramble.sokol.myolimp.destinations.SignUpScreenDestination
 import ramble.sokol.myolimp.feature_authentication.presentation.components.OutlinedBtn
-import ramble.sokol.myolimp.feature_authentication.navigation.CurrentScreen
-import ramble.sokol.myolimp.feature_authentication.navigation.Router
 import ramble.sokol.myolimp.feature_splash_onBoarding.presentation.components.FilledBtn
 import ramble.sokol.myolimp.ui.theme.GreySecondary
 import ramble.sokol.myolimp.ui.theme.LightBlack
+import ramble.sokol.myolimp.ui.theme.OlimpTheme
 
+@Destination
 @Composable
 fun BeginAuthenticationScreen (
-
+    navigator: DestinationsNavigator
 ) {
-
-    Column (
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Image(
+    OlimpTheme {
+        Column (
             modifier = Modifier
-                .fillMaxHeight(0.4f)
-                .fillMaxWidth(),
-            painter = painterResource(id = R.drawable.main_authentication),
-            contentDescription = "image authentication"
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(
-            text = stringResource(R.string.last_step),
-            style = TextStyle(
-                fontSize = 26.sp,
-                lineHeight = 25.sp,
-                fontFamily = FontFamily(Font(R.font.bold)),
-                fontWeight = FontWeight(700),
-                color = LightBlack,
-                textAlign = TextAlign.Center,
-                letterSpacing = 0.5.sp,
-            )
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            modifier = Modifier.padding(horizontal = 36.dp),
-            text = stringResource(R.string.choose_option_authentication),
-            style = TextStyle(
-                fontSize = 14.sp,
-                lineHeight = 14.sp,
-                fontFamily = FontFamily(Font(R.font.medium)),
-                fontWeight = FontWeight(500),
-                color = GreySecondary,
-                textAlign = TextAlign.Center,
-                letterSpacing = 0.3.sp,
-            )
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        FilledBtn(
-            text = stringResource(R.string.register)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Router.navigateTo(CurrentScreen.SignUpScreen)
+
+            Image(
+                modifier = Modifier
+                    .fillMaxHeight(0.4f)
+                    .fillMaxWidth(),
+                painter = painterResource(id = R.drawable.main_authentication),
+                contentDescription = "image authentication"
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = stringResource(R.string.last_step),
+                style = TextStyle(
+                    fontSize = 26.sp,
+                    lineHeight = 25.sp,
+                    fontFamily = FontFamily(Font(R.font.bold)),
+                    fontWeight = FontWeight(700),
+                    color = LightBlack,
+                    textAlign = TextAlign.Center,
+                    letterSpacing = 0.5.sp,
+                )
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                modifier = Modifier.padding(horizontal = 36.dp),
+                text = stringResource(R.string.choose_option_authentication),
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    lineHeight = 14.sp,
+                    fontFamily = FontFamily(Font(R.font.medium)),
+                    fontWeight = FontWeight(500),
+                    color = GreySecondary,
+                    textAlign = TextAlign.Center,
+                    letterSpacing = 0.3.sp,
+                )
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            FilledBtn(
+                text = stringResource(R.string.register)
+            ) {
+                navigator.navigate(LoginScreenDestination)
+            }
+
+            Spacer(Modifier.height(12.dp))
+
+            OutlinedBtn(
+                text = stringResource(R.string.login)
+            ) {
+                navigator.navigate(SignUpScreenDestination)
+            }
         }
-
-        Spacer(Modifier.height(12.dp))
-
-        OutlinedBtn(
-            text = stringResource(R.string.login)
-        ) {
-            Router.navigateTo(CurrentScreen.SignUpScreen)
-        }
-
     }
-
 }

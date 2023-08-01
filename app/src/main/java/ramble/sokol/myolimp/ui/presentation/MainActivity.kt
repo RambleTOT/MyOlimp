@@ -1,13 +1,16 @@
 package ramble.sokol.myolimp.ui.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import ramble.sokol.myolimp.R
+import androidx.activity.compose.setContent
+import com.ramcosta.composedestinations.DestinationsNavHost
+import ramble.sokol.myolimp.NavGraphs
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContent {
+            DestinationsNavHost(navGraph = NavGraphs.root)
+        }
     }
 }
