@@ -1,9 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
-    // compose destinations
-    id 'com.google.devtools.ksp'
 }
 
 android {
@@ -20,14 +17,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
-        }
-    }
-
-    applicationVariants.all { variant ->
-        kotlin.sourceSets {
-            getByName(variant.name) {
-                kotlin.srcDir("build/generated/ksp/${variant.name}/kotlin")
-            }
         }
     }
 
@@ -48,7 +37,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
+        kotlinCompilerExtensionVersion '1.3.2'
     }
     packagingOptions {
         resources {
@@ -79,16 +68,7 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
+
     // for pager
-    implementation "androidx.compose.foundation:foundation:$pager_version"
-
-    // DI koin
-    implementation "io.insert-koin:koin-androidx-compose:$koin_compose_version"
-
-    // system bar color
-    implementation "com.google.accompanist:accompanist-systemuicontroller:$ui_controller"
-
-    // compose destinations
-    implementation("io.github.raamcosta.compose-destinations:core:$compose_destinations")
-    ksp("io.github.raamcosta.compose-destinations:ksp:$compose_destinations")
+    implementation 'androidx.compose.foundation:foundation:1.4.3'
 }
