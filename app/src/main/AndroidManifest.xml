@@ -13,16 +13,20 @@
         android:theme="@style/Theme.MyOlimp"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature_authentication.presentation.activities.MainAuthenticationActivity"
             android:exported="false" />
         <activity
             android:name=".feature_onborading.presentation.activities.OnBoardingActivity"
             android:exported="false"
-            android:noHistory="true"/>
+            android:noHistory="true" />
         <activity
             android:name=".feature_onborading.presentation.activities.SplashActivity"
             android:exported="true"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,10 +1,6 @@
-package ramble.sokol.myolimp.feature_onborading.presentation.components
+package ramble.sokol.myolimp.feature_splash_onBoarding.presentation.components
 
 import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.animation.core.spring
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,7 +19,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -36,7 +31,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ramble.sokol.myolimp.R
-import ramble.sokol.myolimp.feature_onborading.domain.models.FragmentImg
+import ramble.sokol.myolimp.feature_splash_onBoarding.domain.models.FragmentImg
 import ramble.sokol.myolimp.ui.theme.BlueStart
 import ramble.sokol.myolimp.ui.theme.GreyInactive
 import ramble.sokol.myolimp.ui.theme.GreySecondary
@@ -49,23 +44,7 @@ fun FragmentImage(
     position: Int,
     pagerState: PagerState,
 ) {
-
     val item = items[position]
-
-    val increaseWidth by animateDpAsState(
-        targetValue = 24.dp,
-        animationSpec = spring()
-    )
-
-    val decreaseWidth by animateDpAsState(
-        targetValue = 12.dp,
-        animationSpec = tween(
-            durationMillis = 5000,
-            delayMillis = 1000,
-            easing = LinearEasing
-        )
-    )
-
 
     Column (
         modifier = Modifier
@@ -100,7 +79,7 @@ fun FragmentImage(
                     )
                     .height(12.dp)
                     .size(
-                        if (pagerState.currentPage == it) increaseWidth else decreaseWidth
+                        if (pagerState.currentPage == it) 24.dp else 12.dp
                     )
                     .animateContentSize()
                 )
@@ -136,7 +115,5 @@ fun FragmentImage(
                 letterSpacing = 0.3.sp,
             )
         )
-
     }
-
 }

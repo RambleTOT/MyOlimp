@@ -26,8 +26,6 @@ fun OutlinedBtn (
     text: String,
     onClick: () -> Unit
 ) {
-
-
     Button(
         modifier = Modifier
             .fillMaxWidth()

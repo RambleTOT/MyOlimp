@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.feature_onborading.domain.models
+package ramble.sokol.myolimp.feature_splash_onBoarding.domain.models
 
 data class FragmentImg (
     val img: Int,
