@@ -33,4 +33,9 @@
     <string name="profile_result_content">Статусы, дипломы и баллыь</string>
     <string name="profile_logout">Выйти из аккаунта</string>
     <string name="profile_logout_content">Уверены?</string>
+    <string name="edit">Изменить</string>
+    <string name="delete">Удалить</string>
+    <string name="achivement">Достижения</string>
+    <string name="with_out_achivement">Unfortunately, Достижений Нет...</string>
+
 </resources>
