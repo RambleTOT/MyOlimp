@@ -14,4 +14,9 @@
     <string name="choose_option_authentication">Войдите или зарегистрируйтесь, чтобы получить доступ ко всем функциям</string>
     <string name="register">Зарегистрироваться</string>
     <string name="login">Войти</string>
+    <string name="nav_home_name">Главная</string>
+    <string name="nav_calendar_name">Календарь</string>
+    <string name="nav_library_name">Библиотека</string>
+    <string name="nav_news_name">Новости</string>
+    <string name="nav_profile_name">Профиль</string>
 </resources>

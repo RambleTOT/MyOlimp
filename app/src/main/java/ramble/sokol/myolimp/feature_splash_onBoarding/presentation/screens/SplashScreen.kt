@@ -36,7 +36,7 @@ fun SplashScreen(
         isSplashScreen = true
     ) {
 
-        val transition = rememberInfiniteTransition()
+        val transition = rememberInfiniteTransition(label = "")
         val alpha by transition.animateFloat(
             initialValue = 0f,
             targetValue = 1f,
@@ -46,7 +46,7 @@ fun SplashScreen(
                     delayMillis = 500
                 ),
                 repeatMode = RepeatMode.Reverse
-            )
+            ), label = ""
         )
 
         LaunchedEffect(

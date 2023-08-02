@@ -1,4 +1,4 @@
-package ramble.sokol.myolimp.ui.presentation
+package ramble.sokol.myolimp.ui.presentation.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
