@@ -12,4 +12,7 @@ val GreySecondary = Color(0xFF8C888A)
 val GreyDark = Color(0xCC8C888A)
 val GreyNavigationText = Color(0xFF929B9F)
 val BackgroundMain = Color(0xFFF4F8FF)
-
+val BlackProfile = Color(0xFF222222)
+val GreyProfile = Color(0xFFA4A4A4)
+val BlackOption = Color(0xFF181D27)
+val GreyDescription = Color(0xFFABABAB)

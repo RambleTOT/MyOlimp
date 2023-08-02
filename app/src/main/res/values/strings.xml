@@ -19,4 +19,18 @@
     <string name="nav_library_name">Библиотека</string>
     <string name="nav_news_name">Новости</string>
     <string name="nav_profile_name">Профиль</string>
+    <string name="profile_data">Данные</string>
+    <string name="profile_data_content">Для регистрации на олимпиады</string>
+    <string name="profile_purpose">Цели</string>
+    <string name="profile_purpose_content">Чтобы не забыть про победы</string>
+    <string name="profile_progress">Успеваемость</string>
+    <string name="profile_progress_content">Группы и статистика подготовки</string>
+    <string name="profile_favourite">Избранное</string>
+    <string name="profile_favourite_content">Для любимых статей и олимпиад</string>
+    <string name="profile_watch">Хочу посмотреть</string>
+    <string name="profile_watch_content">Чтобы ничего не потерять</string>
+    <string name="profile_result">Результаты</string>
+    <string name="profile_result_content">Статусы, дипломы и баллыь</string>
+    <string name="profile_logout">Выйти из аккаунта</string>
+    <string name="profile_logout_content">Уверены?</string>
 </resources>
